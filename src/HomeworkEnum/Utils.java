@@ -5,6 +5,8 @@ public class Utils {
         String biba = "test text for color";
         print(biba);
         print(biba, EnumColor.ANSI_GREEN);
+        print(biba, EnumColor.getRandom());
+
     }
 
     public static void print(String text) {
@@ -12,7 +14,6 @@ public class Utils {
     }
 
     public static void print(String text, EnumColor color) {
-        System.out.println(text + color.getColor()); //красит со второй итерации?
-        System.out.println(text + color.getColor());
+        System.out.println(color.getColor() + text);
     }
-}
+    }
