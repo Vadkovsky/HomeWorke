@@ -7,6 +7,10 @@ import java.util.Scanner;
 
 public class PhoneBook {
     private static List<Contacts> contactsArrayList = new ArrayList<>();
+    private static String textMessage = "List of available commands: \n" +
+            "addCont - Add contact \n" +
+            "listCont - List of contact \n" +
+            "exit - Exit this program";
 
     public static void main(String[] args) {
         menu();
@@ -16,50 +20,34 @@ public class PhoneBook {
         boolean terMenu = true;
         contactsArrayList = getContacts();
         System.out.println();
+
         do {
-            System.out.println("Enter -help to see a list of available commands. \n" +
-                    "Enter -exit to exit this program.");
+            System.out.println(textMessage);
             Scanner scanner = new Scanner(System.in);
-            String command1 = scanner.nextLine();
-            String textMessage = "List of available commands: \n" +
-                    "addCont - Add contact \n" +
-                    "listCont - List of contact \n" +
-                    "exit - Exit this program";
-
+            String command1 = scanner.next();
             switch (command1) {
-                case "help":
+                case "addCont":
+                    try {
+                        addCont();
+                    } catch (DuplicatesException e) {
+                        System.out.println(e.getMessage());
+                    }
                     System.out.println(textMessage);
-                    do {
-                        String command2 = scanner.next();
-                        switch (command2) {
-                            case "addCont":
-                                try {
-                                    addCont();
-                                } catch (DuplicatesException e) {
-                                    System.out.println(e.getMessage());
-                                }
-                                System.out.println(textMessage);
-                                break;
-                            case "listCont":
-                                listCont();
-                                System.out.println("\n" + textMessage);
-                                break;
-                            case "exit":
-                                terMenu = false;
-                                break;
-                            default:
-                                System.out.println("Not found this command. \n" + textMessage);
-                                break;
-                        }
-
-                    } while (terMenu);
+                    break;
+                case "listCont":
+                    listCont();
+                    System.out.println("\n" + textMessage);
+                    break;
                 case "exit":
                     terMenu = false;
                     break;
                 default:
-                    System.out.println("Not found this command.");
+                    System.out.println("Not found this command. \n" + textMessage);
+                    break;
             }
+
         } while (terMenu);
+        System.out.println("Pokeda");
     }
 
     private static List<Contacts> getContacts() {
