@@ -17,7 +17,7 @@ public class PhoneBook {
         contactsArrayList = getContacts();
         System.out.println();
         do {
-           System.out.println("Enter -help to see a list of available commands. \n" +
+            System.out.println("Enter -help to see a list of available commands. \n" +
                     "Enter -exit to exit this program.");
             Scanner scanner = new Scanner(System.in);
             String command1 = scanner.nextLine();
@@ -27,32 +27,32 @@ public class PhoneBook {
                     "exit - Exit this program";
 
             switch (command1) {
-               case "help":
+                case "help":
                     System.out.println(textMessage);
-                do {
-                    String command2 = scanner.next();
-                    switch (command2) {
-                        case "addCont":
-                            try {
-                                addCont();
-                            } catch (DuplicatesException e) {
-                                System.out.println(e.getMessage());
-                            }
-                            System.out.println(textMessage);
-                            break;
-                        case "listCont":
-                            listCont();
-                            System.out.println("\n" + textMessage);
-                            break;
-                        case "exit":
-                            terMenu = false;
-                            break;
-                        default:
-                            System.out.println("Not found this command. \n" + textMessage);
-                            break;
-                    }
+                    do {
+                        String command2 = scanner.next();
+                        switch (command2) {
+                            case "addCont":
+                                try {
+                                    addCont();
+                                } catch (DuplicatesException e) {
+                                    System.out.println(e.getMessage());
+                                }
+                                System.out.println(textMessage);
+                                break;
+                            case "listCont":
+                                listCont();
+                                System.out.println("\n" + textMessage);
+                                break;
+                            case "exit":
+                                terMenu = false;
+                                break;
+                            default:
+                                System.out.println("Not found this command. \n" + textMessage);
+                                break;
+                        }
 
-                } while (terMenu);
+                    } while (terMenu);
                 case "exit":
                     terMenu = false;
                     break;
@@ -84,11 +84,11 @@ public class PhoneBook {
         String type = sc.next();
         boolean param = true;
         for (Contacts contacts : contactsArrayList) {
-            if (surname.equals(contacts.getSurname()) & (phoneNumber == contacts.getPhoneNumber())) {
+            if (surname.equals(contacts.getSurname()) & (firstName.equals(contacts.getFirstName()) & (phoneNumber.equals(contacts.getPhoneNumber())))) {
                 param = false;
             }
         }
-        if (param == true) {
+        if (param) {
             contactsArrayList.add(new Contacts.Builder()
                     .surname(surname)
                     .firstName(firstName)
@@ -106,8 +106,8 @@ public class PhoneBook {
         int i = 0;
         for (Contacts k : contactsArrayList) {
             i++;
-            System.out.println(i + ". Surname: " + k.getSurname() + "; FirstName: " + k.getFirstName() + "; PhoneNumber: " +
-                    k.getPhoneNumber() + "; Type: " + k.getType());
+            System.out.println(i + "." + k.getSurname() + " " + k.getFirstName() + " " +
+                    k.getPhoneNumber() + " " + k.getType());
         }
     }
 
