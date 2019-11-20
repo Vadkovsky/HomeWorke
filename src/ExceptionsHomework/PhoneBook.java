@@ -20,9 +20,8 @@ public class PhoneBook {
         boolean terMenu = true;
         contactsArrayList = getContacts();
         System.out.println();
-
+        System.out.println(textMessage);
         do {
-            System.out.println(textMessage);
             Scanner scanner = new Scanner(System.in);
             String command1 = scanner.next();
             switch (command1) {
@@ -42,7 +41,7 @@ public class PhoneBook {
                     terMenu = false;
                     break;
                 default:
-                    System.out.println("Not found this command. \n" + textMessage);
+                    System.out.println("Not found this command. \n\n" + textMessage);
                     break;
             }
 
