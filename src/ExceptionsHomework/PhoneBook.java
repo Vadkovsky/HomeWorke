@@ -7,9 +7,9 @@ import java.util.Scanner;
 
 public class PhoneBook {
     private static List<Contacts> contactsArrayList = new ArrayList<>();
-    private static String textMessage = "List of available commands: \n" +
+    private static String textMessage = "Collections.List of available commands: \n" +
             "addCont - Add contact \n" +
-            "listCont - List of contact \n" +
+            "listCont - Collections.List of contact \n" +
             "exit - Exit this program";
 
     public static void main(String[] args) {
@@ -89,7 +89,7 @@ public class PhoneBook {
     }
 
     private static void listCont() {
-        System.out.println("List of contacts: \n");
+        System.out.println("Collections.List of contacts: \n");
         int i = 0;
         for (Contacts k : contactsArrayList) {
             i++;
