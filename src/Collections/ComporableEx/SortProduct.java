@@ -15,7 +15,7 @@ public class SortProduct {
         for(Product product : products)
             System.out.println(product.toString());
 
-        Arrays.sort(products, ProductName);
+        Arrays.sort(products, new ProductName());
         System.out.println("\nСортировка по цене");
 
         for(Product s : products)
