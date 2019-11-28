@@ -1,27 +1,21 @@
 package Collections.ComporableEx;
 
-public class ProductCount implements Comparable<ProductCount> {
-    private String name;
-    private int count;
+import java.util.Comparator;
 
-    public ProductCount(String name, int count) {
-        this.name = name;
-        this.count = count;
-    }
+public class ProductCount implements Comparator<ProductCount> {
 
-    @Override
-    public int compareTo(ProductCount o) {
-        if (this.getCount() > o.getCount()) {
-            return -1;
-        }
-        if (this.getCount() < o.getCount()) {
+    public int compare(ProductCount obj1, ProductCount obj2)
+    {
+        float count1 = obj1.getCount();
+        float count2 = obj2.getCount();
+
+        if (count1 > count2) {
             return 1;
+        } else if (count1 < count2) {
+            return -1;
+        } else {
+            return 0;
         }
-        return 0;
-    }
-
-    public String getName() {
-        return name;
     }
 
     public int getCount() {

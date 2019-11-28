@@ -1,24 +1,19 @@
 package Collections.ComporableEx;
 
-public class ProductName implements Comparable<ProductName> {
-    private String name;
-    private int count;
+import java.util.Comparator;
 
-    public ProductName(String name, int count) {
-        this.name = name;
-        this.count = count;
-    }
+public class ProductName implements Comparator<ProductName> {
 
-    @Override
-    public int compareTo(ProductName a) {
-        return name.compareTo(a.getName());
-    }
+        public int compare(ProductName obj1, ProductName obj2)
+        {
+            String str1 = obj1.getName();
+            String str2 = obj2.getName();
 
+            return str1.compareTo(str2);
+        }
     public String getName() {
         return name;
     }
-
-    public int getCount() {
-        return count;
     }
+
 }

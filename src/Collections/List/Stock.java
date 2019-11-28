@@ -1,36 +1,20 @@
 package Collections.List;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.Spliterator;
-import java.util.function.Consumer;
-
-public class Stock implements Iterable {
+public class Stock {
     public static void main(String[] args) {
-        ArrayList<String> stocks = new ArrayList<String>();
-        stocks.add("Кабачек");
-        stocks.add("Трактор");
-        stocks.add("Сапог");
-        stocks.add("Сторож");
-        stocks.add("Бутылка");
-        for (String s : stocks) {
-            System.out.print(s + ", ");
+        CustumArrayList<String> products = new CustumArrayList<>();
+        products.add("Холодильник");
+        products.add("Телевизор");
+        products.add("Стиральная машина");
+        products.add("Хлебопечка");
+        products.add("Утюг");
+        products.add("Чайник");
+
+        for (String s : products) {
+            System.out.println("Товар на складе: " + s);
         }
-    }
 
-
-    @Override
-    public Iterator iterator() {
-        return null;
-    }
-
-    @Override
-    public void forEach(Consumer action) {
-    }
-
-
-    @Override
-    public Spliterator spliterator() {
-        return null;
+        System.out.println("\nРазмер CustomArrayList: " + products.size());
+        System.out.println("\nЭлемент с индексом 2: " + products.get(2));
     }
 }
