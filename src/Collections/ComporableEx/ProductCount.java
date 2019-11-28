@@ -4,8 +4,7 @@ import java.util.Comparator;
 
 public class ProductCount implements Comparator<ProductCount> {
 
-    public int compare(ProductCount obj1, ProductCount obj2)
-    {
+    public int compare(ProductCount obj1, ProductCount obj2) {
         float count1 = obj1.getCount();
         float count2 = obj2.getCount();
 
@@ -19,6 +18,7 @@ public class ProductCount implements Comparator<ProductCount> {
     }
 
     public int getCount() {
-        return count;
+        return getCount();
     }
+
 }
