@@ -12,13 +12,19 @@ public class SortProduct {
         products[3] = new Product("Шкаф", 16);
 
         System.out.println("Без сортировки");
-        for(Product product : products)
+        for (Product product : products)
             System.out.println(product.toString());
 
-        Arrays.sort(products, new ProductName());
-        System.out.println("\nСортировка по цене");
+        Arrays.sort(products, new ProductCount());
+        System.out.println("\nСортировка по количеству");
 
-        for(Product s : products)
+        for (Product s : products)
+            System.out.println(s.toString());
+
+        Arrays.sort(products, new ProductName());
+        System.out.println("\nСортировка по названию");
+
+        for (Product s : products)
             System.out.println(s.toString());
     }
 

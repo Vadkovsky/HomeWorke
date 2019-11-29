@@ -9,6 +9,14 @@ public class Product {
         this.count = count;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
     public String toString() {
         return "Наименование: " + name + ", цена - "
                 + count;
