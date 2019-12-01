@@ -6,7 +6,10 @@ import java.util.Scanner;
 public class SaitMap {
     private static HashMap<String, String> mapVault = new HashMap<>();
     private static Scanner scanner = new Scanner(System.in);
-
+    /**
+     * Гланвный метод.
+     * @param args .
+     */
     public static void main(String[] args) {
         int count;
         System.out.println("Введите количество пользователей:");
